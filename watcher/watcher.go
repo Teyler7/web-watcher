@@ -84,7 +84,7 @@ func (w *Watcher) Run() error {
 func (w *Watcher) updateTask(task *models.Task, hash string, body []byte) error {
 	if _, err := w.Session.ChannelMessageSend(
 		task.ChannelID,
-		fmt.Sprintf("%s has been updated! Last update : %s", task.URL, task.UpdatedAt.Format(updateFormat)),
+		fmt.Sprintf("The site %s has been updated recently! Last check was at %s http://gph.is/1nLzYLr", task.URL, task.UpdatedAt.Format(updateFormat)),
 	); err != nil {
 		return err
 	}

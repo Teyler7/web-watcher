@@ -59,7 +59,7 @@ func (w *Watcher) watch(s *discordgo.Session, m *discordgo.MessageCreate, args [
 
 	w.NewTask(&task)
 
-	return s.ChannelMessageSend(m.ChannelID, m.Author.Mention()+" successfully registered URL")
+	return s.ChannelMessageSend(m.ChannelID, m.Author.Mention()+" successfully registered URL. Just another candle in the wind 🕯")
 }
 
 // The unwatch discord command handler.
@@ -89,7 +89,7 @@ func (w *Watcher) unwatch(s *discordgo.Session, m *discordgo.MessageCreate, args
 		return nil, err
 	}
 
-	return s.ChannelMessageSend(m.ChannelID, m.Author.Mention()+" successfully deleted URL")
+	return s.ChannelMessageSend(m.ChannelID, m.Author.Mention()+" successfully deleted URL. Miss you in the saddest fashion 👋")
 }
 
 // The watchlist discord command handler.
@@ -102,7 +102,7 @@ func (w *Watcher) watchList(s *discordgo.Session, m *discordgo.MessageCreate, ar
 	}
 
 	if len(tasks) == 0 {
-		return s.ChannelMessageSend(m.ChannelID, m.Author.Mention()+"There is no registered URL. Add one with `watch` command")
+		return s.ChannelMessageSend(m.ChannelID, m.Author.Mention()+" There is no registered URL. Add one with `watch` command")
 	}
 
 	var urls []string
@@ -116,10 +116,10 @@ func (w *Watcher) watchList(s *discordgo.Session, m *discordgo.MessageCreate, ar
 // The ready discord handler.
 // Used to set the bot status.
 func (w *Watcher) onReady(discord *discordgo.Session, ready *discordgo.Ready) {
-	if err := discord.UpdateStatus(0, "Looking at other people's websites"); err != nil {
+	if err := discord.UpdateStatus(0, "Being a Good Horsey 🐴"); err != nil {
 		log.Fatalln("Error attempting to set my status,", err)
 	}
 
 	log.Printf("Web-watcher has started on %d servers\n", len(discord.State.Guilds))
-	log.Printf("Inspecting websites every %d minutes", int(w.WatchInterval.Minutes()))
+	log.Printf("Inspecting websites every %d minute(s)", int(w.WatchInterval.Minutes()))
 }

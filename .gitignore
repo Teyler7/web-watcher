@@ -18,3 +18,4 @@ web-watcher
 .idea/*
 vendor/
 dist/
+output.log

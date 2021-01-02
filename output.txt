@@ -1,0 +1,5 @@
+2021/01/02 16:01:45 Crawling: https://teyler7.github.io
+2021/01/02 16:01:45 Hashes are identical. Skipping further checks...
+2021/01/02 16:01:46 Bot is now running.  Press CTRL-C to exit.
+2021/01/02 16:01:46 Web-watcher has started on 1 servers
+2021/01/02 16:01:46 Inspecting websites every 1 minute(s)
